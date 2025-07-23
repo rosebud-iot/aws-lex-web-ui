@@ -827,8 +827,9 @@ export default {
     };
     // simulate response card in sessionAttributes
     // used mainly for postContent which doesn't support response cards
-    if ('sessionAttributes' in lexState &&
-      'appContext' in lexState.sessionAttributes
+    if (lexState &&
+      typeof lexState.sessionAttributes !== 'undefined' &&
+      typeof lexState.sessionAttributes.appContext !== 'undefined'
     ) {
       try {
         const appContext = JSON.parse(lexState.sessionAttributes.appContext);
