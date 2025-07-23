@@ -106,8 +106,8 @@ export const Store = VuexStore;
 export class Loader {
   constructor(config = {}) {
     const createAppInstance = (window.Vue) ? window.Vue.createApp : createApp;
-    const vuexCreateStore = (window.Vuex) ? window.Vuex.createStore : createStore;    
-    
+    const vuexCreateStore = (window.Vuex) ? window.Vuex.createStore : createStore;
+
     const vuetify = createVuetify({
       components,
       directives,
@@ -145,7 +145,7 @@ export class Loader {
         },
       }
     })
-    
+
     const app = createAppInstance({
       template: '<div id="lex-web-ui"><lex-web-ui/></div>',
     })
@@ -186,8 +186,8 @@ export class Loader {
 }
 
 // comment out for prod build
-if(process.env.NODE_ENV === "development")
-{
-  const lexWeb = new Loader();
-  lexWeb.app.mount('#lex-app');
-}
+//if(process.env.NODE_ENV === "development")
+//{
+//  const lexWeb = new Loader();
+//  lexWeb.app.mount('#lex-app');
+//}
