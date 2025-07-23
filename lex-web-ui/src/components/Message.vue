@@ -43,7 +43,7 @@
                       :key="index"
                       :subtitle="item.subtitle"
                       :title="item.title"
-                      @click="resendMessage(item.title)">
+                      @click="resendMessage((typeof item.value !== 'undefined' && item.value) ? item.value : item.title)">
                       <template v-if="item.imageData" v-slot:prepend>
                         <v-avatar>
                           <v-img :src="item.imageData"></v-img>
@@ -68,7 +68,7 @@
                           :key="index"
                           :subtitle="panelItem.subtitle"
                           :title="panelItem.title"
-                          @click="resendMessage(panelItem.title)">
+                          @click="resendMessage((typeof panelItem.value != 'undefined' && panelItem.value) ? panelItem.value : panelItem.title)">
                           <template v-if="panelItem.imageData" v-slot:prepend>
                             <v-avatar>
                               <v-img :src="panelItem.imageData"></v-img>
